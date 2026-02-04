@@ -13,21 +13,21 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #050b14, #0b1d33, #102a44); /* azul noite */
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
-      overflow: hidden; /* necessário pras estrelas */
+      overflow: hidden;
     }
 
     /* ⭐ ESTRELAS CAINDO */
     .estrela {
       position: fixed;
       top: -10px;
-      color: white;
-      opacity: 0.8;
+      color: #eaf6ff;
+      opacity: 0.9;
       pointer-events: none;
       animation: cair linear forwards;
     }
@@ -42,23 +42,23 @@
     .card {
       width: 100%;
       max-width: 360px;
-      background: white;
+      background: linear-gradient(135deg, #ffe4ee, #fff0f6); /* rosa claro */
       border-radius: 25px;
       padding: 25px;
       text-align: center;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.45);
       position: relative;
       z-index: 2;
     }
 
     h1 {
-      color: #e63946;
+      color: #1e3a5f;
       font-size: 22px;
       margin-bottom: 10px;
     }
 
     p {
-      color: #444;
+      color: #4a5d73;
       font-size: 15px;
       margin-bottom: 15px;
     }
@@ -68,7 +68,7 @@
       padding: 15px;
       border: none;
       border-radius: 30px;
-      background: #e63946;
+      background: linear-gradient(135deg, #1e3a5f, #2a6f97);
       color: white;
       font-size: 16px;
       font-weight: bold;
@@ -78,7 +78,7 @@
     .mensagem {
       display: none;
       margin-top: 18px;
-      color: #e63946;
+      color: #1e3a5f;
       font-size: 16px;
       font-weight: bold;
       animation: aparecer 0.8s ease;
@@ -107,8 +107,8 @@
     <div id="m1" class="mensagem">Você é especial demais pra não receber um carinho assim 🫠💫</div>
     <div id="m2" class="mensagem">Você tem uma vibe que não passa despercebida.</div>
     <div id="m3" class="mensagem">É calma… mas ao mesmo tempo intensa.</div>
-    <div id="m4" class="mensagem">Esse som guarda intenções que eu prefiro não explicar🫦🍃</div>
-    <div id="m5" class="mensagem">Só queria que você sentisse isso🌹.</div>
+    <div id="m4" class="mensagem">Esse som guarda intenções que eu prefiro não explicar 🫦🍃</div>
+    <div id="m5" class="mensagem">Só queria que você sentisse isso 🌹</div>
   </div>
 
   <!-- 🎵 MÚSICA -->
@@ -117,7 +117,7 @@
   </audio>
 
   <script>
-    /* ⭐ CRIAR ESTRELAS ALEATÓRIAS */
+    /* ⭐ ESTRELAS ALEATÓRIAS */
     function criarEstrela() {
       const estrela = document.createElement("div");
       estrela.classList.add("estrela");
@@ -139,17 +139,14 @@
     setInterval(criarEstrela, 350);
 
     function acao() {
-      // vibração
       if (navigator.vibrate) {
         navigator.vibrate([120, 80, 120]);
       }
 
-      // tocar música
       const musica = document.getElementById("musica");
-      musica.volume = 0.50;
+      musica.volume = 0.5;
       musica.play();
 
-      // mostrar mensagens
       setTimeout(() => m1.style.display = "block", 600);
       setTimeout(() => m2.style.display = "block", 1600);
       setTimeout(() => m3.style.display = "block", 2600);
